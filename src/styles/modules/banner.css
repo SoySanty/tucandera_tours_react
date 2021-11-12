@@ -1,0 +1,40 @@
+/*
+========================================BANNER 1
+*/
+.banner {
+  position: relative;
+  height: calc(100vh - 3rem);
+}
+.banner::before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-image: linear-gradient(0deg, var(--color-1) 5%, transparent);
+  z-index: 1;
+}
+.banner img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/*
+========================================BANNER 2
+*/
+.banner2 {
+  padding: 5rem 1rem;
+  background: var(--color-1);
+  color: var(--color-2);
+  text-align: center;
+}
+.banner2 h3 {
+  color: var(--color-3);
+  margin-bottom: 1rem;
+}
+.banner2 b {
+  color: var(--color-3);
+}
