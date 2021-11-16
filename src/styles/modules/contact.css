@@ -1,0 +1,145 @@
+.contact {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  max-width: 55rem;
+  margin: auto;
+  padding: 5rem 1rem 8rem 1rem;
+}
+
+/*
+=================================CONTACT FORM
+*/
+.contact-form {
+  position: relative;
+  padding: 3rem 2rem;
+  background: var(--color-2);
+}
+.contact-form::after {
+  position: absolute;
+  content: "";
+  width: 30%;
+  height: 100%;
+  top: 0;
+  right: -29%;
+  background: var(--color-2);
+}
+.contact-form-content {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.contact-form-content input,
+.contact-form-content textarea {
+  padding: 0.5rem 1rem;
+  outline: none;
+  background: none;
+  border: 1px solid var(--color-1);
+}
+.contact-form-content input:focus,
+.contact-form-content textarea:focus {
+  border: 1px solid var(--color-3);
+}
+.contact-form-content textarea {
+  height: 7rem;
+  max-height: 10rem;
+  min-height: 5rem;
+  resize: vertical;
+}
+.contact-form-content button {
+  position: relative;
+  margin: auto;
+  margin-top: 1rem;
+  padding: 0.5rem 3rem;
+  width: fit-content;
+  background: none;
+  border: 1px solid var(--color-1);
+  cursor: pointer;
+}
+.contact-form-content button::before {
+  transition: 0.4s;
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: var(--color-3);
+  transform: scale(0, 1);
+}
+.contact-form-content button p {
+  position: relative;
+}
+.contact-form-content button:hover {
+  border: 1px solid var(--color-3);
+}
+.contact-form-content button:hover::before {
+  transform: scale(1);
+}
+.contact-form-content button:hover p {
+  color: var(--color-2);
+}
+
+/*
+==========================================CONTACT INFO
+*/
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 3rem 2rem;
+  background: var(--color-3);
+  transform: translateY(3rem);
+  color: var(--color-2);
+}
+.contact-info a {
+  color: var(--color-2);
+  text-decoration: none;
+}
+.contact-info a:hover {
+  text-decoration: underline;
+}
+.contact-info .dir-list {
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+}
+.contact-info .dir-list a {
+  display: flex;
+  gap: 0.5rem;
+}
+.contact-social-icons {
+  display: flex;
+  gap: 0.5rem;
+  font-size: 1.5rem;
+}
+.icon-social {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  color: var(--color-3);
+  background: rgba(200, 255, 238, 0.418);
+  border-radius: 50%;
+  overflow: hidden;
+}
+.icon-social::before {
+  transition: 0.3s;
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: var(--color-2);
+  transform: scale(0);
+  border-radius: 50%;
+}
+.icon-social:hover::before {
+  transform: scale(1.2);
+}
+.icon-social:hover .icon {
+  position: relative;
+}

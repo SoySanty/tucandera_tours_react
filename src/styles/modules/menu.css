@@ -11,10 +11,32 @@
   color: var(--color-2);
   z-index: 2;
 }
-
+.burguer-menu {
+  display: none;
+}
+.menu-list {
+  display: flex;
+}
+.menu-item {
+  display: flex;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+.menu-item-icon,
+.menu-item-icon-down {
+  color: var(--color-3);
+}
 /*
-===========================MEDIA QUERYES
-MOVIL
+====================================MEDIA QUERYES
+-------DESKTOP
+*/
+@media screen and (min-width: 50rem) {
+  .menu-list {
+    gap: 1rem;
+  }
+}
+/*
+-------MOVIL
 */
 @media screen and (max-width: 50rem) {
   .burguer-menu {
@@ -23,6 +45,8 @@ MOVIL
     justify-content: space-between;
     width: 2rem;
     height: 1.5rem;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
   }
   .burguer-bar {
     transition: 0.5s;

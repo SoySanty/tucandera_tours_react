@@ -1,6 +1,9 @@
 import React from "react";
+import { connect } from "react-redux";
 
-const CardContent = () => {
+const CardContent = (props) => {
+  const { siteList } = props;
+  console.log(siteList);
   return (
     <div className="card-container">
       <p>Sites section</p>
@@ -8,4 +11,11 @@ const CardContent = () => {
   );
 };
 
-export default CardContent;
+const mapStateToProps = (state) => {
+  return {
+    siteList: state.siteList,
+  };
+};
+
+// export default CardContent;
+export default connect(mapStateToProps, null)(CardContent);

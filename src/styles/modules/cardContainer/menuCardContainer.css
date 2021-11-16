@@ -6,6 +6,8 @@
   color: var(--color-2);
   background: var(--color-1);
   overflow-x: auto;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
 }
 .menu-card-container::-webkit-scrollbar {
   display: none;
