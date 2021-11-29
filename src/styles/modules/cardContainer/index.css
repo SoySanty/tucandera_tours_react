@@ -1,0 +1,13 @@
+/*------------------------------*/
+/*--------MEDIA QUERYES--------*/
+/*------------------------------*/
+/*
+-----PC
+*/
+
+@media screen and (min-width: 800px) {
+  .card-container {
+    display: grid;
+    grid-template-columns: auto 1fr;
+  }
+}

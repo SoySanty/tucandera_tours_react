@@ -1,9 +1,9 @@
 const reducer = (state, action) => {
   switch (action.type) {
-    case "SET_SITE_INDEXER":
+    case "REFRESH_INDEXERS":
       return {
         ...state,
-        siteIndexer: [...state.siteIndexer, action.payload],
+        placeIndexer: action.payload,
       };
     default:
       return state;

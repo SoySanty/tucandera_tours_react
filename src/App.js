@@ -7,7 +7,7 @@ import { createStore } from "redux";
 
 const initialState = {
   isLoading: false,
-  siteIndexer: [],
+  placeIndexer: [],
   siteList: [],
   businessList: [],
 };

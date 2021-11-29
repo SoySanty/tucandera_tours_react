@@ -31,7 +31,7 @@ const Contact = () => {
       </div>
       <div className="contact-info">
         <h2>
-          OTRAS DE <br />
+          OTRAS <br />
           FORMAS DE CONTACTO
         </h2>
         <div className="dir-list">

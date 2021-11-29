@@ -6,6 +6,9 @@ import {
   faAddressCard,
   faChevronDown,
   faEnvelope,
+  faHotel,
+  faUtensils,
+  faGlassMartiniAlt,
 } from "@fortawesome/free-solid-svg-icons";
 import {
   faWhatsapp,
@@ -38,6 +41,20 @@ const ArrowDown = (props) => {
   const { className = "" } = props;
   return <FontAwesomeIcon icon={faChevronDown} className={className} />;
 };
+const HotelIcon = (props) => {
+  const { className = "" } = props;
+  return <FontAwesomeIcon icon={faHotel} className={className} />;
+};
+const RestaurantIcon = (props) => {
+  const { className = "" } = props;
+  return <FontAwesomeIcon icon={faUtensils} className={className} />;
+};
+const BarIcon = (props) => {
+  const { className = "" } = props;
+  return <FontAwesomeIcon icon={faGlassMartiniAlt} className={className} />;
+};
+
+//Business
 const WhatsappIcon = (props) => {
   const { className = "" } = props;
   return <FontAwesomeIcon icon={faWhatsapp} className={className} />;
@@ -66,6 +83,9 @@ export {
   ContactIcon,
   AddressIcon,
   ArrowDown,
+  HotelIcon,
+  RestaurantIcon,
+  BarIcon,
   WhatsappIcon,
   MailIcon,
   FacebookIcon,

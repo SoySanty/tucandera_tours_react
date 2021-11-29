@@ -1,0 +1,31 @@
+.place-box {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  overflow: hidden;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.profile-place {
+  transition: transform 0.3s;
+  width: 100%;
+  height: 100%;
+}
+.profile-place:hover {
+  transform: rotate(1deg) scale(1.05);
+}
+
+.data-box {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1rem;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background-image: linear-gradient(0deg, black, transparent);
+}

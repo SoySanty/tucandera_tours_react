@@ -1,7 +1,7 @@
 //Push indexer sites
-const setSiteIndexer = (payload) => ({
-  type: "SET_SITE_INDEXER",
+const refreshIndexers = (payload) => ({
+  type: "REFRESH_INDEXERS",
   payload,
 });
 
-export { setSiteIndexer };
+export { refreshIndexers };
