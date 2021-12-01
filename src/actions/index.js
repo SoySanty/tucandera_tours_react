@@ -4,4 +4,10 @@ const refreshIndexers = (payload) => ({
   payload,
 });
 
-export { refreshIndexers };
+//Push an element to siteList
+const setSite = (payload) => ({
+  type: "SET_SITE",
+  payload,
+});
+
+export { refreshIndexers, setSite };

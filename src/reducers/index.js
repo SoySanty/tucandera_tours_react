@@ -1,10 +1,26 @@
 const reducer = (state, action) => {
   switch (action.type) {
-    case "REFRESH_INDEXERS":
+    //Refresh all indexes
+    case "REFRESH_INDEXERS": {
       return {
         ...state,
         placeIndexer: action.payload,
       };
+    }
+
+    //Set a place in siteList
+    case "SET_SITE": {
+      const NEW_ITEM = state.siteList.findIndex(
+        (e) => e.detalles.nro === action.payload.detalles.nro
+      );
+      return NEW_ITEM < 0
+        ? {
+            ...state,
+            siteList: [...state.siteList, action.payload],
+          }
+        : state;
+    }
+
     default:
       return state;
   }

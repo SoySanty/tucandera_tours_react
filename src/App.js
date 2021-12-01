@@ -4,6 +4,7 @@ import Home from "./components/screens/Home";
 import { Provider } from "react-redux";
 import reducer from "reducers";
 import { createStore } from "redux";
+import Site from "components/screens/Site";
 
 const initialState = {
   isLoading: false,
@@ -20,6 +21,7 @@ function App() {
         <Routes>
           <Route path="/" exact element={<Home />} />
           <Route path="/:placeType" element={<Home />} />
+          <Route path="/sitios/:site" element={<Site />} />
         </Routes>
       </BrowserRouter>
     </Provider>

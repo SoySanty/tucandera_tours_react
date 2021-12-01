@@ -3,7 +3,9 @@
 */
 :root {
   --color-1: #1b1b1b;
+  --color-1t: #00000040;
   --color-2: #d2e3e9;
+  --color-2t: rgba(255, 255, 255, 0.699);
   --color-3: #34a583;
   --color-4: #c14953;
   --color-5: #427aa1;

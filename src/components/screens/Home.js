@@ -11,34 +11,35 @@ import { scroller } from "react-scroll";
 const SCROLL_TYPE = {
   duration: 1000,
   delay: 100,
-  smooth: "easeOutQuad",
+  smooth: "easeInOutQuint",
   offset: -48,
 };
 //List of possible parameters of URL
-const ROUTES_LIST = [
-  "sitios",
-  "restaurantes",
-  "bares",
-  "hospedaje",
-  "contacto",
-];
+const MENU_ROUTES = ["sitios", "restaurantes", "bares", "hospedaje"];
 
 const Home = () => {
   const param = useParams(); //Parámetros de la URL
 
-  //Auto scroll on load page and when the url parameters are changed
+  //Auto scroll on load page or when the url parameters are changed
   useEffect(() => {
-    if (ROUTES_LIST.includes(param.placeType)) {
+    if (MENU_ROUTES.includes(param.placeType)) {
       scroller.scrollTo("menu-card-container", SCROLL_TYPE);
+    } else if (param.placeType === "contacto") {
+      scroller.scrollTo("contacto", SCROLL_TYPE);
+    } else {
+      scroller.scrollTo("top", SCROLL_TYPE);
     }
     window.addEventListener("load", () => {
-      if (ROUTES_LIST.includes(param.placeType)) {
+      if (MENU_ROUTES.includes(param.placeType)) {
         scroller.scrollTo("menu-card-container", SCROLL_TYPE);
+      }
+      if (param.placeType === "contacto") {
+        scroller.scrollTo("top", SCROLL_TYPE);
       }
     });
     return () => {
       window.removeEventListener("load", () => {
-        if (ROUTES_LIST.includes(param.placeType)) {
+        if (MENU_ROUTES.includes(param.placeType)) {
           scroller.scrollTo("menu-card-container", SCROLL_TYPE);
         }
       });
@@ -50,7 +51,7 @@ const Home = () => {
       <Banner />
       <CardContainer
         param={
-          ROUTES_LIST.includes(param.placeType) ? param.placeType : "sitios"
+          MENU_ROUTES.includes(param.placeType) ? param.placeType : "sitios"
         }
       />
       <Contact />

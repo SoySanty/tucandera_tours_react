@@ -1,4 +1,5 @@
 import React from "react";
+import { Element } from "react-scroll";
 import "styles/modules/contact.css";
 import {
   FacebookIcon,
@@ -10,9 +11,9 @@ import {
 
 const Contact = () => {
   return (
-    <div className="contact">
+    <Element className="contact" name="contacto">
       <div className="contact-form">
-        <h2>
+        <h2 className="title-font">
           ENVÍANOS <br />
           UN MENSAJE
         </h2>
@@ -30,7 +31,7 @@ const Contact = () => {
         </form>
       </div>
       <div className="contact-info">
-        <h2>
+        <h2 className="title-font">
           OTRAS <br />
           FORMAS DE CONTACTO
         </h2>
@@ -66,7 +67,7 @@ const Contact = () => {
           </a>
         </div>
       </div>
-    </div>
+    </Element>
   );
 };
 

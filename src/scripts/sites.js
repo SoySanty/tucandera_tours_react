@@ -7,4 +7,15 @@ const getIndexes = async ({ callback }) => {
   callback(response);
 };
 
-export { getIndexes };
+const getSite = async ({ id, callback }) => {
+  const body = new FormData();
+  body.append("nro", id);
+  const data = { method: "POST", body };
+  const URL = MAIN_URL + "?show=site&target=filter-site";
+
+  const request = await fetch(URL, data);
+  const response = await request.json();
+  callback(response);
+};
+
+export { getIndexes, getSite };

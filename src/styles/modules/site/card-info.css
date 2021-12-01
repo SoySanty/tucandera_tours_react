@@ -1,0 +1,40 @@
+.card-section {
+  position: absolute;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr auto;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  color: var(--color-1);
+  background: var(--color-2t);
+}
+.card-section--section1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  padding: 1rem 3rem;
+  overflow-y: auto;
+}
+.card-title-container {
+  margin-bottom: 2rem;
+}
+.card-title-container__title {
+  font-size: 4rem;
+  text-transform: uppercase;
+}
+.card-title-container__subtitle {
+  font-size: 1.6rem;
+}
+
+.card-section--section2 {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  padding: 1rem 3rem;
+  margin-left: auto;
+  overflow: hidden;
+}

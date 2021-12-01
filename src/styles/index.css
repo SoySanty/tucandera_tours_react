@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Passion+One&display=swap");
+
 * {
   margin: 0;
   padding: 0;
@@ -7,7 +9,36 @@ body {
   max-width: 100vw;
   overflow-x: hidden;
   background: var(--color-1);
+  font-size: 1rem;
+  font-family: serif;
+  font-family: "Passion One", sans-serif;
+}
+b {
+  font-weight: normal;
 }
 li {
   list-style: none;
+}
+
+.title-font {
+  font-weight: normal;
+}
+
+.scroll-bar::-webkit-scrollbar {
+  -webkit-appearance: none;
+}
+.scroll-bar::-webkit-scrollbar:vertical {
+  width: 0.4rem;
+}
+.scroll-bar::-webkit-scrollbar-button:increment,
+.contenedor::-webkit-scrollbar-button {
+  display: none;
+}
+.scroll-bar::-webkit-scrollbar:horizontal {
+  height: 0.4rem;
+  width: 0.4rem;
+}
+.scroll-bar::-webkit-scrollbar-thumb {
+  background-color: var(--color-1);
+  border-radius: 1rem;
 }

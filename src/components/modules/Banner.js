@@ -16,23 +16,32 @@ const Banner = () => {
       <section className="banner">
         <picture>
           <source srcSet={Img1_M} media="(max-width: 50rem)" />
-          <img src={Img1} alt="Tucanadera Tours" />
+          <img src={Img1} alt="Tucanadera Tours" loading="lazzy" />
         </picture>
         <picture>
           <source srcSet={Img2_M} media="(max-width: 50rem)" />
-          <img src={Img2} alt="Tucanadera Tours" />
+          <img src={Img2} alt="Tucanadera Tours" loading="lazzy" />
         </picture>
+        <div className="banner__title">
+          <h1 className="title-font">¿QUE HACER EN SAMAIPATA?</h1>
+          <p>Todo lo que puedes hacer en Samaipata</p>
+        </div>
         <picture>
           <source srcSet={Img3_M} media="(max-width: 50rem)" />
-          <img src={Img3} alt="Tucanadera Tours" />
+          <img src={Img3} alt="Tucanadera Tours" loading="lazzy" />
         </picture>
         <picture>
           <source srcSet={Img4_M} media="(max-width: 50rem)" />
-          <img src={Img4} alt="Tucanadera Tours" />
+          <img
+            src={Img4}
+            alt="Tucanadera Tours"
+            loading="lazzy"
+            className="last-banner"
+          />
         </picture>
       </section>
       <section className="banner2">
-        <h3>¡Hola, bienvenido a Samaipata! </h3>
+        <h3 className="title-font">¡HOLA! BIENVENIDO A SAMAIPATA... </h3>
         <p>
           En esta plataforma encontrarás <b>información de todos los sitios </b>
           que puedes visitar en Samaipata, además de una recopilación de sólo

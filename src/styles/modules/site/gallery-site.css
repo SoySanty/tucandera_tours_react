@@ -1,0 +1,42 @@
+.gallery-site {
+  grid-column: 1 / span 2;
+  display: flex;
+  gap: 1rem;
+  padding: 0.5rem 1rem;
+  margin-top: auto;
+  margin-bottom: 1rem;
+  overflow-y: hidden;
+  overflow-x: auto;
+}
+
+.img-site {
+  position: relative;
+  padding: 0.2rem;
+  height: 10rem;
+  min-width: 13rem;
+  background: var(--color-1);
+  cursor: pointer;
+  overflow: hidden;
+  -webkit-tap-highlight-color: transparent;
+}
+.img-site::before {
+  transition: opacity 0.5s;
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  pointer-events: none;
+  background: var(--color-1t);
+  backdrop-filter: blur(2px);
+}
+.img-site:hover::before {
+  opacity: 1;
+}
+.img-site img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}

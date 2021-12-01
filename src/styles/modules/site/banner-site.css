@@ -1,0 +1,12 @@
+.banner-site {
+  position: relative;
+  background: var(--color-2);
+  height: calc(100vh - 3rem);
+  overflow: hidden;
+}
+
+.banner-site__banner-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

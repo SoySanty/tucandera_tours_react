@@ -1,0 +1,15 @@
+.menu-site {
+  display: flex;
+  justify-content: flex-end;
+  font-size: 1.3rem;
+  user-select: none;
+}
+
+.menu-site__item {
+  padding: 0.8rem 1.5rem;
+  cursor: pointer;
+}
+.menu-site__item--active {
+  color: var(--color-2);
+  background: var(--color-1);
+}

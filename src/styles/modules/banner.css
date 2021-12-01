@@ -4,6 +4,7 @@
 .banner {
   position: relative;
   height: calc(100vh - 3rem);
+  overflow: hidden;
 }
 .banner::before {
   position: absolute;
@@ -15,11 +16,29 @@
   background-image: linear-gradient(0deg, var(--color-1) 5%, transparent);
   z-index: 1;
 }
+.banner__title {
+  position: absolute;
+  width: 100%;
+  top: 35%;
+  left: 0;
+  color: var(--color-2);
+}
+.banner__title h1,
+.banner__title p {
+  text-align: center;
+}
 .banner img {
   position: absolute;
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: bottom left;
+}
+.banner .last-banner {
+  height: 90%;
+  width: 90%;
+  bottom: 0;
+  left: 0;
 }
 
 /*
@@ -38,8 +57,50 @@
 }
 .banner2 h3 {
   color: var(--color-3);
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
+  font-size: 2.5rem;
+}
+.banner2 P {
+  font-size: 1.5rem;
 }
 .banner2 b {
   color: var(--color-3);
+}
+
+/*-------------------------------------*/
+/*--MEDIA QUERY--*/
+/*-------------------------------------*/
+/*
+PC
+*/
+
+@media screen and (min-width: 800px) {
+  .banner__title {
+    z-index: 1;
+  }
+  .banner__title h1 {
+    font-size: 4rem;
+  }
+  .banner__title p {
+    font-size: 1.5rem;
+  }
+}
+
+/*
+MOBILE
+*/
+@media screen and (max-width: 800px) {
+  .banner__title {
+    z-index: 1;
+  }
+  .banner__title h1 {
+    font-size: 2rem;
+  }
+  .banner2 h3 {
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+  }
+  .banner2 P {
+    font-size: 1.1rem;
+  }
 }
