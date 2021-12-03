@@ -1,6 +1,7 @@
 .menu-site {
   display: flex;
   justify-content: flex-end;
+  margin-bottom: 1rem;
   font-size: 1.3rem;
   user-select: none;
 }
@@ -12,4 +13,21 @@
 .menu-site__item--active {
   color: var(--color-2);
   background: var(--color-1);
+}
+
+/*-------------------*/
+/* MEDIA QUERY */
+/*-------------------*/
+/* MOBILE */
+@media screen and (max-width: 900px) {
+  .menu-site {
+    justify-content: flex-start;
+    margin-bottom: 1rem;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .menu-site {
+    margin-bottom: 0.7rem;
+  }
 }

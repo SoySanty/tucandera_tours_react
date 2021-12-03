@@ -1,3 +1,4 @@
+import LoadingSvg from "img/vectors/LoadingSvg";
 import React from "react";
 import MAIN_URL from "scripts/mainUrl";
 import "styles/modules/site/banner-site.css";
@@ -16,7 +17,7 @@ const BannerSite = (props) => {
       <CardInfo data={data.detalles} gallery={data.imagenes} />
     </section>
   ) : (
-    <p>Cargando...</p>
+    <LoadingSvg color="white" />
   );
 };
 

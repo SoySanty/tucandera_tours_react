@@ -9,10 +9,9 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "styles/modules/site/data-card.css";
 import ParameterCard from "./ParameterCard";
+import LoadingSvg from "img/vectors/LoadingSvg";
 
 const DataCard = ({ data, show }) => {
-  console.log(data);
-
   const ShowTarget = ({ data, show }) => {
     switch (show) {
       case "data":
@@ -72,7 +71,7 @@ const DataCard = ({ data, show }) => {
         );
 
       default:
-        return <p>Cargando...</p>;
+        return <LoadingSvg />;
     }
   };
 

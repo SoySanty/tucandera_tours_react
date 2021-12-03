@@ -1,0 +1,19 @@
+/*----------------------*/
+/* SVG */
+/*----------------------*/
+#loading {
+  position: fixed;
+  width: 6rem;
+  top: calc(50% - 3rem);
+  left: calc(50% - 3rem);
+  animation: 0.5s loading linear infinite;
+  opacity: 0.8;
+}
+/*----------------------*/
+/* ANIMATIONS */
+/*----------------------*/
+@keyframes loading {
+  to {
+    transform: rotate(360deg);
+  }
+}

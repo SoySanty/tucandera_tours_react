@@ -55,7 +55,11 @@ const Contact = () => {
               <FacebookIcon className="icon" />
             </div>
           </a>
-          <a href="www.facebook.com">
+          <a
+            href="https://www.youtube.com/channel/UCoBSQ8GRhbPugnWwbB6IrUA"
+            rel="noreferrer"
+            target="_blank"
+          >
             <div className="icon-social">
               <YouTubeIcon className="icon" />
             </div>

@@ -38,3 +38,41 @@
   margin-left: auto;
   overflow: hidden;
 }
+
+/*-------------------*/
+/* MEDIA QUERY */
+/*-------------------*/
+/* MOBILE */
+@media screen and (max-width: 900px) {
+  .card-section {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr auto;
+  }
+  .card-title-container {
+    margin-bottom: 0rem;
+  }
+  .card-title-container__title {
+    font-size: 2.5rem;
+  }
+  .card-title-container__subtitle {
+    font-size: 1.3rem;
+  }
+  .card-section--section2 {
+    padding-top: 0;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .card-section--section1,
+  .card-section--section2 {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media screen and (max-height: 30rem) {
+  .card-section {
+    min-height: 30rem;
+    background: var(--color-2);
+  }
+}
