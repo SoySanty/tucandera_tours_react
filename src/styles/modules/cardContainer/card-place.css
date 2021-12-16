@@ -1,8 +1,13 @@
+.place-link {
+  color: var(--color-2);
+}
+
 .place-box {
   position: relative;
   width: 100%;
   height: 100%;
   cursor: pointer;
+  color: var(--color-2);
   overflow: hidden;
   -webkit-tap-highlight-color: transparent;
 }
@@ -43,4 +48,5 @@
 }
 .data-box .description-place {
   font-size: 0.9rem;
+  opacity: 0.8;
 }

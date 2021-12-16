@@ -6,6 +6,8 @@ import Footer from "components/modules/Footer";
 import Contact from "components/modules/Contact";
 import { useParams } from "react-router";
 import { scroller } from "react-scroll";
+import { refreshMeta } from "scripts/metaTags";
+import MAIN_URL from "scripts/mainUrl";
 
 //Scroll Parameters
 const SCROLL_TYPE = {
@@ -45,6 +47,18 @@ const Home = () => {
       });
     };
   }, [param]);
+
+  //Refresh metadata
+  useEffect(() => {
+    refreshMeta({
+      name: "Tucandera",
+      description:
+        "Informacion turística de todos los sitios que puedes visitar en Samaipata, además de recomendaciones de solo los mejores servicios que Samaipata tiene para ofrecer.",
+      imgUrl: "http://api.tucanderatours.com/view/img/banner.png",
+      link: "https://tucanderatours.com/",
+    });
+  }, [param]);
+
   return (
     <>
       <Menu />

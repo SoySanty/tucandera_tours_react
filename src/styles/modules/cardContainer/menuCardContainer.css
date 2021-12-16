@@ -11,6 +11,7 @@
   overflow-x: auto;
   user-select: none;
   -webkit-tap-highlight-color: transparent;
+  scroll-behavior: smooth;
   z-index: 1;
 }
 .menu-card-container::-webkit-scrollbar {

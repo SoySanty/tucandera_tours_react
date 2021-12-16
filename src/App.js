@@ -11,6 +11,12 @@ const initialState = {
   placeIndexer: [],
   siteList: [],
   businessList: [],
+  metaData: {
+    title: "Tucandera Tours",
+    description:
+      "Informacion turística de todos los sitios que puedes visitar en Samaipata, además de recomendaciones de solo los mejores servicios que Samaipata tiene para ofrecer.",
+    imgUrl: "http://api.tucanderatours.com/view/img/banner.png",
+  },
 };
 const store = createStore(reducer, initialState);
 

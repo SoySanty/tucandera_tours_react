@@ -11,6 +11,27 @@
   font-size: 1.1rem;
   overflow-y: auto;
 }
+.details-card__reservation-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.contact-option {
+  display: flex;
+  gap: 0.5rem;
+  flex-direction: row-reverse;
+  padding: 0.7rem 1rem;
+  width: 100%;
+  text-decoration: none;
+  border: 0.1rem solid var(--color-1);
+  color: var(--color-1);
+  transition: 0.2s;
+}
+.contact-option:hover {
+  background: var(--color-1);
+  color: var(--color-2);
+  text-decoration: underline;
+}
 .details-card__container {
   padding: 0.5rem 1rem;
   width: fit-content;
@@ -46,6 +67,9 @@
     gap: 0.5rem;
     align-items: flex-start;
     margin: 0;
+  }
+  .contact-option {
+    flex-direction: row;
   }
 }
 

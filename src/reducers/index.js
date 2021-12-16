@@ -21,6 +21,14 @@ const reducer = (state, action) => {
         : state;
     }
 
+    //Refresh metadata
+    case "REFRESH_METADATA": {
+      return {
+        ...state,
+        metaData: action.payload,
+      };
+    }
+
     default:
       return state;
   }

@@ -25,6 +25,7 @@ const CardContent = (props) => {
               img={`${MAIN_URL}view/img/sitios/${e.index}/profile/profile.jpg`}
               type={e.tiposervicio}
               link={"/sitios/" + e.index}
+              linkType="site"
             />
           ))
         ) : (
@@ -44,6 +45,7 @@ const CardContent = (props) => {
               slogan={e.introduccion}
               img={`${MAIN_URL}view/img/hospedaje/${e.index}/profile/profile.jpg`}
               type={e.categoria}
+              link={e.link}
             />
           ))
         ) : (
@@ -63,6 +65,7 @@ const CardContent = (props) => {
               slogan={e.introduccion}
               img={`${MAIN_URL}view/img/restaurante/${e.index}/profile/profile.jpg`}
               type={e.categoria}
+              link={e.link}
             />
           ))
         ) : (
@@ -82,6 +85,7 @@ const CardContent = (props) => {
               slogan={e.introduccion}
               img={`${MAIN_URL}view/img/bar/${e.index}/profile/profile.jpg`}
               type={e.categoria}
+              link={e.link}
             />
           ))
         ) : (

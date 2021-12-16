@@ -10,4 +10,10 @@ const setSite = (payload) => ({
   payload,
 });
 
-export { refreshIndexers, setSite };
+//Push indexer sites
+const refreshMetadata = (payload) => ({
+  type: "REFRESH_METADATA",
+  payload,
+});
+
+export { refreshIndexers, setSite, refreshMetadata };

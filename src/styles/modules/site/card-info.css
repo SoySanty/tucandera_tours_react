@@ -72,7 +72,7 @@
 
 @media screen and (max-height: 30rem) {
   .card-section {
-    min-height: 30rem;
+    min-height: 35rem;
     background: var(--color-2);
   }
 }

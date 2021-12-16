@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
+import { refreshMeta } from "scripts/metaTags";
 import { useParams } from "react-router";
 import { refreshIndexers, setSite } from "actions";
 import { getIndexes, getSite } from "scripts/sites";
 import Menu from "components/modules/Menu";
 import BannerSite from "components/modules/SiteCard";
+import MAIN_URL, { THIS_URL } from "scripts/mainUrl";
 
 const Site = (props) => {
   const param = useParams().site;
@@ -19,6 +21,20 @@ const Site = (props) => {
       }
     }
   }, [indexes, param, places]);
+
+  //Refresh metadata
+  useEffect(() => {
+    if (place) {
+      const TARGET = indexes.filter((e) => e.index === param)[0];
+      TARGET &&
+        refreshMeta({
+          name: TARGET.nombre,
+          description: TARGET.introduccion,
+          imgUrl: `${MAIN_URL}view/img/sitios/${TARGET.index}/profile/profile.jpg`,
+          link: `${THIS_URL}sitios/${param}`,
+        });
+    }
+  }, [indexes, param, place]);
 
   //Load sites and indexes
   useEffect(() => {

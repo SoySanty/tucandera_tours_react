@@ -1,4 +1,4 @@
-import React from "react";
+import { useEffect } from "react";
 import {
   faCar,
   faClock,
@@ -10,8 +10,18 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "styles/modules/site/data-card.css";
 import ParameterCard from "./ParameterCard";
 import LoadingSvg from "img/vectors/LoadingSvg";
+import { MailIcon, WhatsappIcon } from "../Icons";
+import { useState } from "react";
 
 const DataCard = ({ data, show }) => {
+  const [details, setDetails] = useState("");
+
+  useEffect(() => {
+    if (data.detalles) {
+      setDetails(data.detalles.split("<br>"));
+    }
+  }, [data]);
+
   const ShowTarget = ({ data, show }) => {
     switch (show) {
       case "data":
@@ -66,7 +76,39 @@ const DataCard = ({ data, show }) => {
       case "details":
         return (
           <div className="details-card scroll-bar">
-            <p>{data.detalles}</p>
+            {details && details.map((e, index) => <p key={index}>{e}</p>)}
+          </div>
+        );
+      case "reservations":
+        return (
+          <div className="details-card scroll-bar">
+            <div className="details-card__reservation-options">
+              <a
+                href="https://api.whatsapp.com/send?phone=59173167735&text=Hola,%20ví%20su%20web%20y%20tengo%20una%20consulta:"
+                target="_blank"
+                rel="noreferrer"
+                className="contact-option"
+              >
+                <WhatsappIcon />
+                OPCIÓN 1
+              </a>
+              <a
+                href="https://api.whatsapp.com/send?phone=59176339435&text=Hola,%20ví%20su%20web%20y%20tengo%20una%20consulta:"
+                target="_blank"
+                rel="noreferrer"
+                className="contact-option"
+              >
+                <WhatsappIcon />
+                OPCIÓN 2
+              </a>
+              <a
+                href="mailto:tucandera.tours@hotmail.com"
+                className="contact-option"
+              >
+                <MailIcon />
+                EMAIL
+              </a>
+            </div>
           </div>
         );
 
