@@ -16,7 +16,7 @@ const CardPlace = (props) => {
   return linkType === "site" ? (
     <Link to={link} className="place-link">
       <article className={`place-box ${className}`}>
-        <img src={img} alt={name} className="profile-place" loading="lazy" />
+        <img src={img} alt={name} className="profile-place" rel="prefetch" />
         <div className="tag-place">
           <p className="title-font type-place">{type}</p>
         </div>
@@ -29,7 +29,7 @@ const CardPlace = (props) => {
   ) : (
     <a href={link} target="_blank" rel="noreferrer">
       <article className={`place-box ${className}`}>
-        <img src={img} alt={name} className="profile-place" loading="lazy" />
+        <img src={img} alt={name} className="profile-place" rel="prefetch" />
         <div className="tag-place">
           <p className="title-font type-place">{type}</p>
         </div>
