@@ -1,10 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  isLoading: false,
-  placeIndexer: [],
   siteList: [],
   businessList: [],
+  siteRepository: {}, // Will contain the site details with key_name as key
   metaData: {
     title: "Tucandera Tours",
     description:
@@ -23,10 +22,15 @@ export const counterSlice = createSlice({
     setBusinessList: (state, action) => {
       state.businessList = action.payload;
     },
+    addSiteDetails: (state, action) => {
+      const payload = action.payload[0];
+      state.siteRepository[payload.key_name] = payload;
+    },
   },
 });
 
 // Action creators are generated for each case reducer function
-export const { setSiteList, setBusinessList } = counterSlice.actions;
+export const { setSiteList, setBusinessList, addSiteDetails } =
+  counterSlice.actions;
 
 export default counterSlice.reducer;

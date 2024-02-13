@@ -5,50 +5,46 @@ import CardPlace from "./CardPlace";
 import { BUSINESS_IMG_URL, SITES_IMG_URL } from "scripts/mainUrl";
 import useSites from "./hooks/useSites";
 import useBusiness from "./hooks/useBusiness";
-import { SUBMENU_ITEM_ENUM } from "scripts/constants";
+import { PATHS_ENUM } from "scripts/constants";
 
 const CardContainer = () => {
   const { placeType } = useParams(); //Parámetros de la URL
   const { siteList } = useSites();
   const { businessList } = useBusiness();
 
-  if (
-    placeType === "sitios" ||
-    SUBMENU_ITEM_ENUM[placeType] === SUBMENU_ITEM_ENUM.site
-  ) {
-    if (siteList.length <= 0) return <p>Cargando...</p>;
+  if (Object.keys(PATHS_ENUM).includes(placeType) && placeType !== "sitios") {
+    if (businessList.length <= 0) return <p>Cargando...</p>;
     return (
       <div className="place-container">
-        {siteList.map((cardItem) => (
-          <CardPlace
-            key={cardItem.id}
-            name={cardItem.name}
-            slogan={cardItem.slogan}
-            img={`${SITES_IMG_URL}${cardItem.id}/images/${cardItem.profile_url}-min`}
-            type={cardItem.plan}
-            link={"/sitios/" + cardItem.key_name}
-            linkType="site"
-          />
-        ))}
+        {businessList
+          .filter((businessCard) => businessCard.type === placeType)
+          .map((businessCard) => (
+            <CardPlace
+              key={businessCard.id}
+              name={businessCard.name}
+              slogan={businessCard.slogan}
+              img={`${BUSINESS_IMG_URL}${businessCard.id}/images/${businessCard.profile_url}`}
+              type={businessCard.category}
+              link={businessCard.link}
+            />
+          ))}
       </div>
     );
   }
-
-  if (businessList.length <= 0) return <p>Cargando...</p>;
+  if (siteList.length <= 0) return <p>Cargando...</p>;
   return (
     <div className="place-container">
-      {businessList
-        .filter((businessCard) => businessCard.type === placeType)
-        .map((businessCard) => (
-          <CardPlace
-            key={businessCard.id}
-            name={businessCard.name}
-            slogan={businessCard.slogan}
-            img={`${BUSINESS_IMG_URL}${businessCard.id}/images/${businessCard.profile_url}`}
-            type={businessCard.category}
-            link={businessCard.link}
-          />
-        ))}
+      {siteList.map((cardItem) => (
+        <CardPlace
+          key={cardItem.id}
+          name={cardItem.name}
+          slogan={cardItem.slogan}
+          img={`${SITES_IMG_URL}${cardItem.id}/images/${cardItem.profile_url}-min`}
+          type={cardItem.plan}
+          link={"/sitios/" + cardItem.key_name}
+          linkType="site"
+        />
+      ))}
     </div>
   );
 };
