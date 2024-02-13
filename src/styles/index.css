@@ -42,3 +42,8 @@ li {
   background-color: var(--color-1);
   border-radius: 1rem;
 }
+
+#root {
+  max-width: 1400px;
+  margin: 0 auto;
+}

@@ -1,23 +1,24 @@
 import LoadingSvg from "img/vectors/LoadingSvg";
 import React from "react";
-import MAIN_URL from "scripts/mainUrl";
 import "styles/modules/site/banner-site.css";
 import CardInfo from "./CardInfo";
+import { get, isEmpty } from "lodash";
+import { SITES_IMG_URL } from "scripts/mainUrl";
 
-const BannerSite = (props) => {
-  const { data = null, profile = null } = props;
+const BannerSite = ({ siteInfo = null }) => {
+  if (isEmpty(siteInfo)) return <LoadingSvg color="white" />;
 
-  return data ? (
+  console.log(siteInfo);
+
+  return (
     <section className="banner-site">
       <img
-        src={MAIN_URL + profile}
-        alt={data.detalles.nombre}
+        src={`${SITES_IMG_URL}${siteInfo.id}/images/${siteInfo.profile_url}`}
+        alt={get(siteInfo, "name") || "Nombre del sitio"}
         className="banner-site__banner-img"
       />
-      <CardInfo data={data.detalles} gallery={data.imagenes} />
+      <CardInfo siteInfo={siteInfo} gallery={siteInfo.imagenes} />
     </section>
-  ) : (
-    <LoadingSvg color="white" />
   );
 };
 

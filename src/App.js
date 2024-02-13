@@ -1,24 +1,16 @@
 import "./styles/App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { configureStore } from "@reduxjs/toolkit";
 import Home from "./components/screens/Home";
 import { Provider } from "react-redux";
-import reducer from "reducers";
-import { createStore } from "redux";
 import Site from "components/screens/Site";
+import sitesAndBusiness from "slices/sitesAndBusiness";
 
-const initialState = {
-  isLoading: false,
-  placeIndexer: [],
-  siteList: [],
-  businessList: [],
-  metaData: {
-    title: "Tucandera Tours",
-    description:
-      "Informacion turística de todos los sitios que puedes visitar en Samaipata, además de recomendaciones de solo los mejores servicios que Samaipata tiene para ofrecer.",
-    imgUrl: "http://api.tucanderatours.com/view/img/banner.png",
+export const store = configureStore({
+  reducer: {
+    sitesAndBusiness,
   },
-};
-const store = createStore(reducer, initialState);
+});
 
 function App() {
   return (

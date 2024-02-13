@@ -4,7 +4,7 @@ import MAIN_URL from "scripts/mainUrl";
 import "styles/modules/site/gallery-site.css";
 import PhotoViewer from "./PhotoViewer";
 
-const GallerySite = ({ gallery }) => {
+const GallerySite = ({ gallery = [] }) => {
   const container = useRef();
   const [showModal, setShowModal] = useState(false);
 

@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import { Link } from "react-router-dom";
 import "styles/modules/cardContainer/menuCardContainer.css";
-import { BarIcon, HikingIcon, HotelIcon, RestaurantIcon } from "../Icons";
+import { MENU_CATEGORIES_ENUM } from "scripts/constants";
 
 const MenuCardContainer = ({ param }) => {
   const MENU = useRef();
@@ -14,38 +14,17 @@ const MenuCardContainer = ({ param }) => {
 
   return (
     <ul className="menu-card-container title-font" ref={MENU}>
-      <Link
-        to="/sitios"
-        className={param === "sitios" || !param ? "menu-active-item" : ""}
-        onClick={() => handleScroll(0)}
-      >
-        <HikingIcon className="icon-card-list" />
-        <span>SITIOS</span>
-      </Link>
-      <Link
-        to="/hospedaje"
-        className={param === "hospedaje" ? "menu-active-item" : ""}
-        onClick={() => handleScroll(1)}
-      >
-        <HotelIcon className="icon-card-list" />
-        <span>HOSPEDAJE</span>
-      </Link>
-      <Link
-        to="/restaurantes"
-        className={param === "restaurantes" ? "menu-active-item" : ""}
-        onClick={() => handleScroll(2)}
-      >
-        <RestaurantIcon className="icon-card-list" />
-        <span>RESTAURANTES</span>
-      </Link>
-      <Link
-        to="/bares"
-        className={param === "bares" ? "menu-active-item" : ""}
-        onClick={() => handleScroll(3)}
-      >
-        <BarIcon className="icon-card-list" />
-        <span>BARES</span>
-      </Link>
+      {MENU_CATEGORIES_ENUM.map((menuItem, index) => (
+        <Link
+          key={menuItem.key}
+          to={`/${menuItem.key}`}
+          className={param === menuItem.key ? "menu-active-item" : ""}
+          onClick={() => handleScroll(index + 1)}
+        >
+          {menuItem.Icon}
+          <span>{menuItem.label.toUpperCase()}</span>
+        </Link>
+      ))}
     </ul>
   );
 };

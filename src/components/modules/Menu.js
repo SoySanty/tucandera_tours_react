@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { connect } from "react-redux";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { Element } from "react-scroll";
 import "styles/modules/menu.css";
@@ -10,8 +10,10 @@ import {
   AddressIcon,
   ArrowDown,
 } from "./Icons";
+import { SUBMENU_ITEM_ENUM } from "scripts/constants";
 
-const Menu = ({ sites }) => {
+const Menu = () => {
+  const sites = useSelector((store) => store.sitesAndBusiness.siteList);
   const [active, setActive] = useState(false);
   const [dropdown, setDropdown] = useState(0);
 
@@ -65,10 +67,10 @@ const Menu = ({ sites }) => {
               <ArrowDown className="menu-item-icon-down" />
               <ul className="dropdown">
                 {sites &&
-                  sites.map((e, index) => (
-                    <Link to={`/sitios/${e.index}`} key={e.nro}>
+                  sites.map((site) => (
+                    <Link to={`/sitios/${site.key_name}`} key={site.id}>
                       <li className="menu-item" onClick={handleActive}>
-                        <span>{e.nombre}</span>
+                        <span>{site.name}</span>
                       </li>
                     </Link>
                   ))}
@@ -84,21 +86,15 @@ const Menu = ({ sites }) => {
               <span>servicios</span>
               <ArrowDown className="menu-item-icon-down" />
               <ul className="dropdown">
-                <Link to="/hospedaje">
-                  <li className="menu-item" onClick={handleActive}>
-                    <span>hospedaje</span>
-                  </li>
-                </Link>
-                <Link to="/restaurantes">
-                  <li className="menu-item" onClick={handleActive}>
-                    <span>restaurantes</span>
-                  </li>
-                </Link>
-                <Link to="/bares">
-                  <li className="menu-item" onClick={handleActive}>
-                    <span>bares</span>
-                  </li>
-                </Link>
+                {Object.keys(SUBMENU_ITEM_ENUM)
+                  .filter((e) => e !== "site")
+                  .map((menuKey) => (
+                    <Link to={`/${menuKey}`} key={menuKey}>
+                      <li className="menu-item" onClick={handleActive}>
+                        <span>{SUBMENU_ITEM_ENUM[menuKey]}</span>
+                      </li>
+                    </Link>
+                  ))}
               </ul>
             </li>
             <Link
@@ -118,7 +114,4 @@ const Menu = ({ sites }) => {
   );
 };
 
-const mapStateToProps = (store) => ({ sites: store.placeIndexer.sites });
-
-// export default Menu;
-export default connect(mapStateToProps, null)(Menu);
+export default Menu;

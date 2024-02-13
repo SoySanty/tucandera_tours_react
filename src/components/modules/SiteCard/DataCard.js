@@ -12,13 +12,14 @@ import ParameterCard from "./ParameterCard";
 import LoadingSvg from "img/vectors/LoadingSvg";
 import { MailIcon, WhatsappIcon } from "../Icons";
 import { useState } from "react";
+import { get } from "lodash";
 
 const DataCard = ({ data, show }) => {
   const [details, setDetails] = useState("");
 
   useEffect(() => {
-    if (data.detalles) {
-      setDetails(data.detalles.split("<br>"));
+    if (get(data, "description")) {
+      setDetails(get(data, "description").split("<br>"));
     }
   }, [data]);
 
@@ -30,46 +31,46 @@ const DataCard = ({ data, show }) => {
             <ParameterCard
               icon={<FontAwesomeIcon icon={faClock} />}
               title="DURACIÓN"
-              description={data.duracionTours}
+              description={get(data, "tours_duration")}
             />
             <ParameterCard
               icon={<FontAwesomeIcon icon={faMapMarkerAlt} />}
               title="UBICACIÓN"
-              description={data.ubicacion}
+              description={get(data, "location_site")}
             />
             <ParameterCard
               icon={<FontAwesomeIcon icon={faCar} />}
               title="DISTANCIA"
               description={
-                Number(data.llegadaAuto1) <= 0
+                Number(get(data, "car_time_from")) <= 0
                   ? "Menos de una hora"
-                  : `Entre ${data.llegadaAuto1} y ${data.llegadaAuto2}horas`
+                  : `Entre ${get(data, "car_time_from")} y ${get(
+                      data,
+                      "car_time_to"
+                    )}horas`
               }
             />
             <ParameterCard
               icon={<FontAwesomeIcon icon={faHiking} />}
               title="CAMINATA"
               description={
-                Number(data.caminata1) <= 0
+                Number(get(data, "hike_time_to")) <= 0
                   ? "Menos de una hora"
-                  : `Entre ${data.caminata1} y ${data.caminata2}horas`
+                  : `Entre ${get(data, "hike_time_from")} y ${get(
+                      data,
+                      "hike_time_to"
+                    )}horas`
               }
             />
             <ParameterCard
               icon={<FontAwesomeIcon icon={faExclamationCircle} />}
               title="GUÍA"
-              description={
-                data.necesidadGuia === "2"
-                  ? "Necesario"
-                  : `${
-                      data.necesidadGuia === "1" ? "Recomendable" : "Opcional"
-                    }`
-              }
+              description={get(data, "with_guide") ? "Necesario" : "Opcional"}
             />
             <ParameterCard
               icon={<FontAwesomeIcon icon={faHiking} />}
               title="ALTITUD"
-              description={`Entre ${data.altitud1} y ${data.altitud2} msnm`}
+              description={`${get(data, "altitude")} msnm`}
             />
           </div>
         );

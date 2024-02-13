@@ -3,8 +3,9 @@ import "styles/modules/site/card-info.css";
 import DataCard from "./DataCard";
 import GallerySite from "./GallerySite";
 import MenuSite from "./MenuSite";
+import { get } from "lodash";
 
-const CardInfo = ({ data, gallery }) => {
+const CardInfo = ({ siteInfo, gallery }) => {
   const [showInfo, setShowInfo] = useState("data");
 
   return (
@@ -12,14 +13,16 @@ const CardInfo = ({ data, gallery }) => {
       <div className="card-section--section1">
         <header className="card-title-container">
           <h1 className="card-title-container__title title-font">
-            {data.nombre}
+            {get(siteInfo, "name")}
           </h1>
-          <p className="card-title-container__subtitle">{data.introduction}</p>
+          <p className="card-title-container__subtitle">
+            {get(siteInfo, "slogan")}
+          </p>
         </header>
       </div>
       <div className="card-section--section2">
         <MenuSite setShowInfo={setShowInfo} show={showInfo} />
-        <DataCard data={data} show={showInfo} />
+        <DataCard data={siteInfo} show={showInfo} />
       </div>
       <GallerySite gallery={gallery} />
     </div>
