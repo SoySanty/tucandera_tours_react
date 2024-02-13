@@ -1,5 +1,7 @@
-// const MAIN_URL = "http://localhost/projects/tucandera/tucandera_remake/";
-const MAIN_URL = "http://localhost:8000/";
+const MAIN_URL =
+  process.env.REACT_APP_BACKEND_URL === "prod"
+    ? "https://api.tucanderatours.com/"
+    : "http://localhost/projects/tucandera/tucandera_remake/";
 const THIS_URL = "https://tucanderatours.com/";
 
 const SITE_LIST_URL = MAIN_URL + "api/sites/";
