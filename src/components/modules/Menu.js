@@ -65,7 +65,7 @@ const Menu = () => {
               <HikingIcon className="menu-item-icon" />
               <span>atractivos</span>
               <ArrowDown className="menu-item-icon-down" />
-              <ul className="dropdown">
+              <ul className="dropdown scroll-bar">
                 {sites &&
                   sites.map((site) => (
                     <Link to={`/sitios/${site.key_name}`} key={site.id}>

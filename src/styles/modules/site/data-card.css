@@ -1,83 +1,88 @@
 .details-card {
   display: flex;
-  gap: 1rem;
+  column-gap: 1.5rem;
+  row-gap: 0.5rem;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: flex-end;
-  padding: 0 0.5rem;
-  margin: auto 0rem;
   height: fit-content;
-  text-align: right;
   font-size: 1.1rem;
+}
+.details-card--icon {
+  color: var(--color-3);
+}
+.details-card__container {
+  width: fit-content;
+  height: fit-content;
+}
+.details-card__title {
+  display: flex;
+  font-size: 1rem;
+  gap: 0.3rem;
+  flex-wrap: wrap;
+}
+.details-card__text {
+  font-size: 1rem;
+  text-transform: uppercase;
+  opacity: 0.7;
+}
+.details-card-text {
+  font-size: 1.1rem;
+  padding-right: 0.5rem;
   overflow-y: auto;
+  overflow-x: hidden;
+}
+.details-card-text__title {
+  font-size: 1.1rem;
+  font-weight: normal;
+}
+.details-card-text__paragraph {
+  opacity: 0.7;
+  font-weight: 200;
+  margin: 1rem 0;
+  max-width: 30rem;
+}
+.details-card-reservation {
+  margin-top: 1.5rem;
 }
 .details-card__reservation-options {
   display: flex;
-  flex-wrap: wrap;
+  padding-top: 0.5rem;
   gap: 1rem;
 }
 .contact-option {
   display: flex;
+  align-items: center;
   gap: 0.5rem;
-  flex-direction: row-reverse;
-  padding: 0.7rem 1rem;
-  width: 100%;
+  padding: 0.5rem 0.7rem;
+  width: 8rem;
   text-decoration: none;
-  border: 0.1rem solid var(--color-1);
-  color: var(--color-1);
-  transition: 0.2s;
+  border: 0.15rem solid transparent;
+  color: var(--color-2);
+  background: var(--color-1);
+  border-radius: 0.45rem;
 }
 .contact-option:hover {
-  background: var(--color-1);
-  color: var(--color-2);
   text-decoration: underline;
 }
-.details-card__container {
-  padding: 0.5rem 1rem;
-  width: fit-content;
-  height: fit-content;
-  border: thin solid black;
+.contact-option--gm:hover {
+  border: 0.15rem solid var(--color-5);
 }
-.details-card__title {
-  display: flex;
-  font-size: 1.3rem;
-  gap: 0.3rem;
-  align-items: center;
-  flex-direction: row-reverse;
+.contact-option--wp:hover {
+  border: 0.15rem solid var(--color-3);
 }
-
-/*-------------------*/
-/* MEDIA QUERY */
-/*-------------------*/
-/* MOBILE */
-@media screen and (max-width: 900px) {
-  .details-card {
-    justify-content: flex-start;
-    padding: 0;
-    text-align: left;
-    font-size: 1rem;
-  }
-  .details-card__title {
-    flex-direction: row;
-  }
+.contact-option--icon {
+  font-size: 1.2em;
+}
+.contact-option--gm .contact-option--icon {
+  color: var(--color-5);
+}
+.contact-option--wp .contact-option--icon {
+  color: var(--color-3);
 }
 
-@media screen and (max-width: 600px) {
-  .details-card {
-    gap: 0.5rem;
-    align-items: flex-start;
-    margin: 0;
-  }
-  .contact-option {
-    flex-direction: row;
-  }
-}
-
-@media screen and (max-width: 450px) {
-  .details-card {
-    padding-right: 0.5rem;
-  }
-  .details-card__container {
-    width: 100%;
+/* -------------------  media queries 800px ------------------- */
+@media screen and (max-width: 800px) {
+  .details-card-text__paragraph {
+    max-width: 100%;
   }
 }

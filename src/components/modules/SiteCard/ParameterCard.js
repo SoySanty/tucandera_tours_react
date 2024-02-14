@@ -7,7 +7,7 @@ const ParameterCard = ({ icon, title, description }) => {
         {icon}
         <h4 className="title-font">{title}</h4>
       </header>
-      <p>{description}</p>
+      <p className="details-card__text">{description}</p>
     </article>
   );
 };

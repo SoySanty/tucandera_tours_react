@@ -25,7 +25,7 @@ const CardContainer = () => {
               slogan={businessCard.slogan}
               img={`${BUSINESS_IMG_URL}${businessCard.id}/images/${businessCard.profile_url}`}
               type={businessCard.category}
-              link={businessCard.link}
+              link={businessCard.google_map_url || businessCard.website_url}
             />
           ))}
       </div>

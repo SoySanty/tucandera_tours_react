@@ -1,5 +1,5 @@
 .photo-viewer {
-  transition: opacity 1s;
+  transition: opacity 0.4s;
   position: fixed;
   width: 100%;
   height: 100%;
@@ -60,9 +60,6 @@
   pointer-events: none;
 }
 .img-target {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   width: 100%;
   height: 100%;
   padding: 1rem;

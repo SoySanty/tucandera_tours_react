@@ -75,9 +75,12 @@
     pointer-events: none;
     flex-direction: column;
     top: 3rem;
+    max-height: calc(100vh - 4rem);
     border-left: 0.15rem solid var(--color-3);
     background: var(--color-1);
     transform: translateY(1rem);
+    overflow-y: auto;
+    overflow-x: hidden;
   }
   .dropdown a {
     text-decoration: none;

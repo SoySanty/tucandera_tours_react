@@ -23,7 +23,7 @@ export const counterSlice = createSlice({
       state.businessList = action.payload;
     },
     addSiteDetails: (state, action) => {
-      const payload = action.payload[0];
+      const payload = action.payload;
       state.siteRepository[payload.key_name] = payload;
     },
   },

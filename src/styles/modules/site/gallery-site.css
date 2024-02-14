@@ -1,10 +1,17 @@
 .gallery-site {
-  grid-column: 1 / span 2;
-  display: flex;
-  gap: 1rem;
-  padding: 0.5rem 0;
-  margin: 0rem 1rem;
+  overflow-y: hidden;
+  overflow-x: auto;
+  max-width: 100%;
+}
+.gallery-site--title {
+  margin-top: 2rem;
   margin-bottom: 0.5rem;
+}
+.gallery-site--container {
+  display: flex;
+  width: fit-content;
+  gap: 1rem;
+  padding-bottom: 0.5rem;
   overflow-y: hidden;
   overflow-x: auto;
   scroll-behavior: smooth;
@@ -15,14 +22,13 @@
   position: relative;
   padding: 0.2rem;
   height: 10rem;
-  min-width: 13rem;
-  background: var(--color-1);
+  aspect-ratio: 1 / 1;
   cursor: pointer;
   overflow: hidden;
   -webkit-tap-highlight-color: transparent;
 }
 .img-site::before {
-  transition: opacity 0.5s;
+  transition: opacity 0.2s;
   position: absolute;
   content: "";
   width: 100%;

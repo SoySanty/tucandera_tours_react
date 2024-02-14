@@ -1,8 +1,9 @@
 import LoadingSvg from "img/vectors/LoadingSvg";
 import React, { useEffect, useRef, useState } from "react";
-import MAIN_URL from "scripts/mainUrl";
+import { SITES_IMG_URL } from "scripts/mainUrl";
 import "styles/modules/site/gallery-site.css";
 import PhotoViewer from "./PhotoViewer";
+import { ImageIcon } from "../Icons";
 
 const GallerySite = ({ gallery = [] }) => {
   const container = useRef();
@@ -40,20 +41,29 @@ const GallerySite = ({ gallery = [] }) => {
 
   return (
     <>
-      <div className="gallery-site scroll-bar" ref={container}>
-        {gallery ? (
-          gallery.map((e, index) => (
-            <div
-              className="img-site"
-              key={`min-${index}`}
-              onClick={() => handleModal(index)}
-            >
-              <img src={MAIN_URL + e.min} alt={e.nombre} />
-            </div>
-          ))
-        ) : (
-          <LoadingSvg />
-        )}
+      <h3 className="gallery-site--title">
+        <ImageIcon className="details-card--icon" />
+        &nbsp;FOTOS:
+      </h3>
+      <div className="gallery-site  scroll-bar" ref={container}>
+        <div className="gallery-site--container">
+          {gallery ? (
+            gallery.map((image, index) => (
+              <div
+                className="img-site"
+                key={image.id}
+                onClick={() => handleModal(index)}
+              >
+                <img
+                  src={`${SITES_IMG_URL}${image.site_id}/images/${image.id}-min`}
+                  alt={image.label}
+                />
+              </div>
+            ))
+          ) : (
+            <LoadingSvg />
+          )}
+        </div>
       </div>
       <PhotoViewer
         gallery={gallery}

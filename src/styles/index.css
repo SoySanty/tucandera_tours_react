@@ -39,7 +39,7 @@ li {
   width: 0.4rem;
 }
 .scroll-bar::-webkit-scrollbar-thumb {
-  background-color: var(--color-1);
+  background-color: var(--color-2);
   border-radius: 1rem;
 }
 

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import MAIN_URL from "scripts/mainUrl";
+import MAIN_URL, { SITES_IMG_URL } from "scripts/mainUrl";
 import "styles/modules/site/photo-viewer.css";
 import {
   faChevronLeft,
@@ -54,7 +54,10 @@ const PhotoViewer = (props) => {
       </div>
       <div className={`img-target`}>
         {image ? (
-          <img src={MAIN_URL + image.img} alt={image.nombre} />
+          <img
+            src={`${SITES_IMG_URL}${image.site_id}/images/${image.id}`}
+            alt={image.label}
+          />
         ) : (
           <LoadingSvg />
         )}
