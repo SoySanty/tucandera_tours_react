@@ -1,7 +1,4 @@
-const MAIN_URL =
-  process.env.REACT_APP_BACKEND_URL === "prod"
-    ? "https://api.tucanderatours.com/"
-    : "http://localhost:8000/";
+const MAIN_URL = process.env.REACT_APP_BACKEND_URL ?? "http://localhost:8000/";
 
 const SITE_LIST_URL = MAIN_URL + "api/sites/";
 const BUSINESS_LIST_URL = MAIN_URL + "api/business/";
