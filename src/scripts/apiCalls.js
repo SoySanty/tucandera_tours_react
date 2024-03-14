@@ -3,7 +3,13 @@ import { SITE_LIST_URL, BUSINESS_LIST_URL } from "./mainUrl";
 // Fetch the list of sites
 const getSiteList = async () => {
   try {
-    const request = await fetch(SITE_LIST_URL);
+    const request = await fetch(SITE_LIST_URL, {
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+        "Access-Control-Allow-Origin": "*",
+      },
+    });
     const response = await request.json();
     return response;
   } catch (e) {
@@ -14,7 +20,13 @@ const getSiteList = async () => {
 // Fetch the list of businesses
 const getBusinessList = async () => {
   try {
-    const request = await fetch(BUSINESS_LIST_URL);
+    const request = await fetch(BUSINESS_LIST_URL, {
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+        "Access-Control-Allow-Origin": "*",
+      },
+    });
     const response = await request.json();
     return response;
   } catch (e) {
@@ -24,7 +36,13 @@ const getBusinessList = async () => {
 
 const getSiteDetails = async ({ keyName }) => {
   try {
-    const request = await fetch(`${SITE_LIST_URL}${keyName}/`);
+    const request = await fetch(`${SITE_LIST_URL}${keyName}/`, {
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+        "Access-Control-Allow-Origin": "*",
+      },
+    });
     const response = await request.json();
     return response;
   } catch (e) {
